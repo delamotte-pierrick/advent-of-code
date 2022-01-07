@@ -14,7 +14,6 @@ def day_7(filename):
     return sum(map(lambda x: median - x if median > x else x - median, dataset))
 
 
-# Here use subtraction in place of an array to optimise the previous algorithm
 def day_7_2(filename):
     dataset = parse_data(filename)
     mean = int(np.mean(np.array(dataset)))
