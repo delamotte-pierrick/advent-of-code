@@ -34,8 +34,8 @@ def day_5_2(filename):
     parsed_data = parse_data(filename)
 
     # auto define max_x and max_y
-    max_y = max(map(lambda data: data[0][0] if data[0][0] > data[1][0] else data[1][0], parsed_data)) + 1
-    max_x = max(map(lambda data: data[0][1] if data[0][1] > data[1][1] else data[1][1], parsed_data)) + 1
+    max_y = max(map(lambda data: max([data[0][0], data[1][0]]), parsed_data)) + 1
+    max_x = max(map(lambda data: max([data[0][1], data[1][1]]), parsed_data)) + 1
 
     matrix = list(map(lambda y: [0] * max_y, [None] * max_x))
     for data in parsed_data:
@@ -60,5 +60,5 @@ def day_5_2(filename):
     return len(list(filter(lambda value: value >= 2, np.array(matrix).flatten())))
 
 
-# print(day_5("./data/input_5.txt"))
+print(day_5("./data/input_5.txt"))
 print(day_5_2("./data/input_5.txt"))

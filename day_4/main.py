@@ -87,5 +87,4 @@ def day_4_2(filename):
 
 
 print(day_4('./data/input_4.txt'))
-print(day_4_2('./data/input_test_4.txt'))
 print(day_4_2('./data/input_4.txt'))
